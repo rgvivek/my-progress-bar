@@ -1,3 +1,25 @@
-<h1>
-  {{title}}
-</h1>
+<div class="panel panel-default">
+	<div class="col-xs-12 refresh" (click)="reLoadBars()">
+	</div>
+  	<div class="panel-body progress-bar-panel">
+	  	<div class="col-xs-12">
+	  		<progress-bar [limit] = "progressBar.limit" [current]="progressBar.current" *ngFor="let progressBar of progressBars"></progress-bar>
+	  	</div>
+	  	<div class="col-xs-12 col-md-6">
+		  	<select [(ngModel)]="currentProgressBar" class="form-control">
+		  		<option *ngFor="let progressBar of progressBars" [ngValue]="progressBar">
+		    	{{progressBar.name}}
+		  		</option>
+			</select>
+		</div>
+		<div class="col-xs-12 col-md-6">
+			<table class="col-xs-12">
+			  	<tr>
+			  		<td *ngFor="let manipulateButton of manipulateButtons" align="center">
+			  			<button type="button" class="btn btn-primary" (click)="editProgressBar(manipulateButton)">{{manipulateButton}}</button>
+			  		</td>
+			  	</tr>
+			</table>
+		</div>
+  	</div>
+</div>
