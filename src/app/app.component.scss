@@ -1,0 +1,45 @@
+.progress-bar-panel{
+	background-color : $grey-1;
+	margin: 5%;
+	.btn{
+		font-size:5vmin;
+		margin: 1% 0;
+    	width: 100%;
+	}
+	.center-block{
+		padding:0;
+	}
+	select{
+		margin: .5% 0;
+    	height: 8.75vmin;
+    	font-size: 4vmin;
+	}
+	td{
+		padding : 0 1%;
+	}
+}
+
+
+.refresh{
+	background:url($refresh) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+    background-size: 100% 100%;
+    margin:15px 0;
+    //-webkit-transform: translate(-50%);
+	//transform: translate(-50%);
+	&:hover{
+		opacity:1;
+		//-webkit-transform: rotate(360deg);
+	  	//transform: rotate(30deg);
+	  	transition: transform 1s;
+	}
+	&:active{
+		opacity:1;
+		-webkit-transform: rotate(360deg);
+	  	transform: rotate(360deg);
+	  	transition: transform .5s;
+	}
+}

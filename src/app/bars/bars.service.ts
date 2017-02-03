@@ -14,7 +14,7 @@ export class BarsService {
 	}
 
     public getBars() : Observable<Bars>{
-    	return this.http.get(this.barsUrl)
+    	return this.http.get(this.barsUrl + "?timestamp=" + (new Date()).getTime())
                     .map(this.extractData.bind(this));
 	}
 
@@ -22,13 +22,5 @@ export class BarsService {
 		let body = res.json();
 		let bars = new Bars(body);
 		return bars;
-	}
-
-	private handleError (error: Response | any) {
-		// In a real world app, we might use a remote logging infrastructure
-		let errMsg: string;
-		errMsg = error.message ? error.message : error.toString();
-		console.error(errMsg);
-		return errMsg;
 	}
 }
